@@ -1,1 +1,1 @@
-# Home-Automation-Controller
+# Home Automation Controller

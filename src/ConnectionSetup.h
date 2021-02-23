@@ -94,6 +94,11 @@ void OtaSetup(){
     server.sendHeader("Connection", "close");
     server.send(200, "text/html", updatePage);
   });
+  server.on("/light", HTTP_GET, []() {
+    server.sendHeader("Connection", "close");
+    server.send(200, "text/html", "<h1>Light Switched</h1>");
+    ShelfLightState();
+  });
   /*handling uploading firmware file */
   server.on("/update", HTTP_POST, []() {
     server.sendHeader("Connection", "close");
